@@ -1,10 +1,26 @@
-import React from 'react'
+import "./App.scss";
+import {BrowserRouter,Routes,Route} from "react-router-dom";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+// import Home from "./pages/home/Home";
+import Contact from "./pages/contact/Contact";
+import { Home } from "./pages";
 
 const App = () => {
+
+  
   return (
-    <div>
-      <h1>Eshop</h1>
-    </div>
+    <>
+    <BrowserRouter>
+    <Header/>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/contact" element={<Contact/>}/>
+      
+    </Routes>
+    <Footer/>
+    </BrowserRouter>
+    </>
   )
 }
 
